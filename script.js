@@ -17,4 +17,42 @@ document.querySelector("#message").addEventListener("keyup", function(){
 // The event handler function should update the textContent property of both sections.
 
 
+//*******************Exercise 2******************//
+
+document.querySelector("#activate-flight").addEventListener("click", function(){
+document.querySelector("#flight").classList.replace("disabled", "enabled")
+
+})
+
+document.querySelector("#activate-mindreading").addEventListener("click", function(){
+    document.querySelector("#mindreading").classList.replace("disabled", "enabled")
+})
+
+document.querySelector("#activate-xray").addEventListener("click", function(){
+    document.querySelector("#xray").classList.replace("disabled", "enabled")
+})
+
+document.querySelector("#activate-all").addEventListener("click", function(){
+    document.querySelector("#mindreading").classList.replace("disabled", "enabled");
+    document.querySelector("#xray").classList.replace("disabled", "enabled");
+    document.querySelector("#flight").classList.replace("disabled", "enabled");
+
+})
+
+document.querySelector("#deactivate-all").addEventListener("click", function(){
+    const selectAll =document.querySelectorAll(".power")
+    selectAll.forEach(element => {
+        element.classList.replace("enabled", "disabled");
+        
+    });
+    
+   
+
+})
+
+// document.querySelector("#deactivate-all").addEventListener() 
+
+
+
+
 
