@@ -89,15 +89,47 @@ document.querySelector("body").addEventListener("click", function () {
     }
 )
 
+const audrey = document.getElementById("audrey")
+
+/*
+    Add an event listener to the `document` object to listen
+    for the "scroll" event.
+    
+*/
+
+// document.querySelector("#audrey").style.width="widthVar";
+window.addEventListener("scroll", function () {
+    console.log("I'm scrolling")
+    // Hint: you're allowed to use the .style property in this exercise, even though we generally advice against it becasue it applies inline styles to your DOM (rather than adding and removing classes)
+
+    // Adjust the width of audrey to be 1/3 the value of `window.scrollY`. No lower than 50px, though.
+    
+    let widthVar = 0.33*window.scrollY;
+    if(widthVar > 50){
+        document.querySelector("#audrey").style.width = `${widthVar}px`;
+    }
+    else{
+        document.querySelector("#audrey").style.width = "50px";
+    }
+    // Adjust the height of audrey to be 1/4 the value of `window.scrollY`. No lower than 100px, though.
+
+    let heightVar = 0.25 * window.scrollY;
+    if(heightVar > 100){
+        document.querySelector("#audrey").style.height = `${heightVar}px`;
+    }
+    else{
+        document.querySelector("#audrey").style.height = `100px`;
+    }
+    
+  console.log(widthVar);
+})
+
+
+ 
 
 
 
-// document.querySelector($(#event.target)).addEventListener("click", function(){
-//     document.querySelector("#xray").classList.replace("disabled", "enabled")
-// })
 
+   
 
-
-
-
-
+   

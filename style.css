@@ -26,5 +26,21 @@
     color: blue;
     background: red;
     font-size:2.5em;
-    
+
 }
+
+#containerx {
+    display: flex;
+    min-height: 1500px;
+  }
+
+  
+  #audrey {
+    background-color: purple;
+    color: snow;
+    min-height: 100px;
+    min-width: 50px;
+    position: fixed;
+  }
+
+  
