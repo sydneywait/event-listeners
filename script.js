@@ -142,9 +142,10 @@ let cardText = document.querySelector("#card-text").value
 // let cardString = `<div class = "card" id = "card-${count}"><p>this is card ${count}</p><p>${cardText}</p><button class = "delete" id = "delete-${count}">Delete card ${count}</button></div>
 
 let cardContainer = document.createElement('div');
+console.log(cardContainer)
 cardContainer.className = "card"
 cardContainer.id = `card-${count}`
-cardContainer.textContent = `<p>This is card ${count}</p>${cardText}`
+cardContainer.innerHTML = `<p>Card ${count}:</p><p> ${cardText}</p>`
 let cardButton = document.createElement('button')
 cardButton.className = "delete"
 cardButton.id = `delete-${count}`
@@ -155,7 +156,7 @@ cardSection.appendChild(cardContainer)
 cardContainer.appendChild(cardButton)
 /////This is not working right here for some reason
 
-document.querySelector("#card-section").appendChild(cardSection)
+document.querySelector("#cards").appendChild(cardContainer)
 
 
 
@@ -165,18 +166,34 @@ document.querySelector("#card-section").appendChild(cardSection)
 
 })
 
-let deleteClick = document.querySelector("body")
-
+let deleteClick = document.querySelector("#cards")
+//look for an event clicking in the section ID = "cards"
 deleteClick.addEventListener("click", function(){
+    //Split the target ID at the dash so it can be used for later commands
     let clickTarget = event.target.id.split('-')
     console.log(clickTarget)
+    //Check to see if they clicked on the Delete button
     if(clickTarget[0]==="delete"){
+        //test if logic is working
         console.log("inside delete")
-console.log(clickTarget[1]);    
+        console.log(clickTarget[1]);    
 
-        document.querySelector(`#card-${clickTarget[1]}`).classList.add("selected")
+        
+        // Select the DIV of the card that was clicked on
+        let selectCardDiv = document.querySelector(`#card-${clickTarget[1]}`)
+        let whatIs = typeof(selectCardDiv)
+        console.log(selectCardDiv.parentNode)
+    //Add a class to the DIV that changes its color to test if click event is working
+        selectCardDiv.classList.add("selected")
 
-        document.querySelector("#cards").parentNode.removeChild(`#card-${clickTarget[1]}`)
+        //remove the child by first going to the parent
+        // selectCardDiv.parentNode.removeChild(selectCardDiv)
+
+        //Also can do it this way
+        document.querySelector("#cards").removeChild(selectCardDiv)
+        
+        
+        
 
     }
 
