@@ -42,5 +42,35 @@
     min-width: 50px;
     position: fixed;
   }
+#cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
+}
+
+  .card{
+      display: flex;
+      flex-direction: column;
+
+    background: lightblue;
+    color: #F00000;
+    width: 100px;
+    height: 200px;
+    border: black solid 1px;
+  }
+
+  .delete{
+      width: 75%;
+      height: 25%;
+      background: red;
+      color: snow;
+      justify-content: flex-end;
+      
+  }
+  .selected {
+      background: yellow;
+      color: green;
+
+  }
   
